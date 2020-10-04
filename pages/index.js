@@ -4,7 +4,6 @@ import { formatNumber } from '@/utils/formatting';
 
 export default function Home() {
   const { data } = useSWR('/api/unsplash', fetcher);
-  console.log(data);
 
   if (!data) return 'Loading';
 
