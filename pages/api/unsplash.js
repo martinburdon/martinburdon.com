@@ -5,7 +5,7 @@ let unsplash;
 export default async (_, res) => {
   if (!unsplash) {
     unsplash = new Unsplash({
-      accessKey: process.env.UNSPLASH_ACCESS_TOKEN
+      accessKey: process.env.UNSPLASH_ACCESS_KEY
     });
   }
 
@@ -13,7 +13,7 @@ export default async (_, res) => {
   const { downloads, views } = await toJson(userStats);
 
   return res.status(200).json({
-    downloads: downloads?.total || 'N/A',
-    views: views?.total || 'N/A'
+    downloads: downloads.total,
+    views: views.total
   });
 };
