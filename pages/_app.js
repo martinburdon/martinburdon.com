@@ -22,6 +22,15 @@ const GlobalStyle = ({ children }) => {
             flex-direction: column;
             min-height: 100vh;
           }
+
+          .wrapper > * {
+            grid-column: 2;
+          }
+
+          .full-bleed {
+            grid-column: 1 / 4;
+            width: 100%;
+          }
         `}
       />
       {children}
