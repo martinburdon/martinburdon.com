@@ -17,13 +17,15 @@ const NowPlaying = () => {
       w="300px"
       backgroundColor="#CBFFE9"
     >
-      <Image
-        alt="Spotify album cover"
-        borderRadius={8}
-        height="60px"
-        src={data?.image || '/static/images/placeholder.jpg'}
-        width="60px"
-      />
+      <Skeleton isLoaded={data}>
+        <Image
+          alt="Spotify album cover"
+          borderRadius={8}
+          height="60px"
+          src={data?.image || '/static/images/placeholder.jpg'}
+          width="60px"
+        />
+      </Skeleton>
       <Stack
         spacing={0}
         justifyContent="center"
