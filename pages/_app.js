@@ -18,6 +18,7 @@ const GlobalStyle = ({ children }) => {
           }
 
           #__next {
+            background: #090c14;
             display: flex;
             flex-direction: column;
             min-height: 100vh;

@@ -12,31 +12,24 @@ const NowPlaying = () => {
       display="flex"
       flexDirection="row"
       alignItems="flex-start"
-      borderRadius={16}
+      borderRadius={8}
       p={4}
       w="300px"
-      backgroundColor="#CBFFE9"
+      backgroundColor="gray.800"
     >
       <Skeleton isLoaded={data}>
         <Image
           alt="Spotify album cover"
-          borderRadius={8}
-          height="60px"
+          borderRadius={4}
+          height="50px"
+          mr={4}
           src={data?.image || '/static/images/placeholder.jpg'}
-          width="60px"
+          width="50px"
         />
       </Skeleton>
-      <Stack
-        spacing={0}
-        justifyContent="center"
-        alignItems="flex-start"
-        display="flex"
-        flexDirection="column"
-        ml={3}
-      >
+      <Stack spacing={0} height="100%">
         <Link
-          color="#069A99"
-          fontWeight="medium"
+          color="gray.100"
           maxWidth="170px"
           whiteSpace="nowrap"
           overflow="hidden"
@@ -47,13 +40,12 @@ const NowPlaying = () => {
           {data && (data?.title || 'Not playing')}
         </Link>
         <Text
-          color="#069A99"
-          mb={4}
+          color="gray.500"
+          fontSize="sm"
           maxWidth="170px"
-          whiteSpace="nowrap"
           overflow="hidden"
           textOverflow="ellipsis"
-          opacity="0.6"
+          whiteSpace="nowrap"
         >
           {data && (data?.artist || 'Spotify')}
         </Text>

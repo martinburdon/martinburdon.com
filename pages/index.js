@@ -1,6 +1,7 @@
 import { Grid } from '@chakra-ui/core';
 import NowPlaying from '@/components/NowPlaying';
 import Unsplash from '@/components/Unsplash';
+import TopTracks from '@/components/TopTracks';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       templateColumns="minmax(20px, 1fr) minmax(auto, 600px) minmax(20px, 1fr)"
     >
       <Unsplash />
+      <TopTracks />
       <NowPlaying />
     </Grid>
   );
