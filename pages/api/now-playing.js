@@ -8,12 +8,15 @@ export default async (_, res) => {
   }
 
   const song = await response.json();
+  // NOTE: currently_playing_type returns `track` for music and `episode` for podcasts
+  // TODO: Support for podcasts
+  const type = song.currently_playing_type === 'track' ? 'music' : 'podcast';
   const isPlaying = song.is_playing;
-  const title = song.item.name;
-  const artist = song.item.artists.map((_artist) => _artist.name).join(', ');
-  const album = song.item.album.name;
-  const image = song.item.album.images[1].url;
-  const songUrl = song.item.external_urls.spotify;
+  const title = song.item?.name;
+  const artist = song.item?.artists.map((_artist) => _artist.name).join(', ');
+  const album = song.item?.album.name;
+  const image = song.item?.album.images[1].url;
+  const songUrl = song.item?.external_urls.spotify;
 
   return res.status(200).json({
     album,
