@@ -8,24 +8,13 @@ const Container = styled(Box)`
 
   div {
     position: relative;
-  }
-
-  div:nth-child(1) {
-    background: #00ff36;
-
-    img {
-      mix-blend-mode: multiply; // Or darken, lighten
-      filter: grayscale(100%) contrast(1);
-    }
-  }
-
-  div:nth-child(3) {
-    background: #e41c2d;
 
     &::after {
       background-color: #1d3162;
       mix-blend-mode: lighten;
+    }
 
+    &::after {
       content: '';
       position: absolute;
       height: 100%;
@@ -33,9 +22,22 @@ const Container = styled(Box)`
       top: 0;
       width: 100%;
     }
+  }
+
+  div:first-child {
+    background: #29ffc4;
 
     img {
-      mix-blend-mode: multiply; // Or darken, lighten
+      mix-blend-mode: multiply; // multiply, darken, lighten
+      filter: grayscale(100%) contrast(1);
+    }
+  }
+
+  div:last-child {
+    background: #f32959;
+
+    img {
+      mix-blend-mode: darken; // multiply, darken, lighten
       filter: grayscale(100%) contrast(1);
     }
   }
