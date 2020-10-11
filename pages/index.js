@@ -10,7 +10,7 @@ export default function Home() {
       className="wrapper"
       templateColumns="minmax(20px, 1fr) minmax(auto, 600px) minmax(20px, 1fr)"
     >
-      <ImageGlitch imageUrl="https://i.scdn.co/image/ab67616d00001e028b52c6b9bc4e43d873869699" />
+      <ImageGlitch src="https://i.scdn.co/image/ab67616d00001e028b52c6b9bc4e43d873869699" />
       <Unsplash />
       <TopTracks />
       <NowPlaying />

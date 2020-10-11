@@ -8,6 +8,8 @@ const Container = styled(Box)`
 
   div {
     position: relative;
+    z-index: 3;
+    animation: glitch1 2.5s infinite;
 
     &::after {
       background-color: #1d3162;
@@ -26,6 +28,9 @@ const Container = styled(Box)`
 
   div:first-child {
     background: #29ffc4;
+    position: absolute;
+    z-index: 1;
+    animation: glitch2 2.5s infinite;
 
     img {
       mix-blend-mode: multiply; // multiply, darken, lighten
@@ -35,6 +40,9 @@ const Container = styled(Box)`
 
   div:last-child {
     background: #f32959;
+    position: absolute;
+    z-index: 2;
+    animation: glitch3 2.5s infinite;
 
     img {
       mix-blend-mode: darken; // multiply, darken, lighten
@@ -43,10 +51,10 @@ const Container = styled(Box)`
   }
 `;
 
-const ImageGlitch = ({ imageUrl }) => {
+const ImageGlitch = ({ src }) => {
   const images = [...Array(3)].map((_, x) => (
     <Box key={x}>
-      <Image src={imageUrl} />
+      <Image src={src} />
     </Box>
   ));
   return <Container>{images}</Container>;
