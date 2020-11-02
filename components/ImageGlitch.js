@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 
 const Container = styled(Box)`
   display: flex;
-  margin: 200px 0;
   position: relative;
 
   div {
@@ -51,13 +50,13 @@ const Container = styled(Box)`
   }
 `;
 
-const ImageGlitch = ({ src }) => {
+const ImageGlitch = ({ src, alt, ...rest }) => {
   const images = [...Array(3)].map((_, x) => (
     <Box key={x}>
-      <Image src={src} />
+      <Image src={src} alt={alt} />
     </Box>
   ));
-  return <Container>{images}</Container>;
+  return <Container {...rest}>{images}</Container>;
 };
 
 export default ImageGlitch;
