@@ -1,6 +1,7 @@
 import fetcher from '@/utils/fetcher';
 import { Box, Icon, Image, Link, Skeleton, Stack, Text } from '@chakra-ui/core';
 import useSWR from 'swr';
+import ImageGlitch from './ImageGlitch';
 
 const NowPlaying = () => {
   const { data } = useSWR('/api/now-playing', fetcher);
@@ -18,7 +19,7 @@ const NowPlaying = () => {
       backgroundColor="gray.800"
     >
       <Skeleton isLoaded={data}>
-        <Image
+        <ImageGlitch
           alt="Spotify album cover"
           borderRadius={4}
           height="50px"
