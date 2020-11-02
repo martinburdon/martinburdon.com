@@ -6,9 +6,9 @@ const Container = styled(Box)`
   position: relative;
 
   div {
+    animation: glitch1 2.5s infinite;
     position: relative;
     z-index: 3;
-    animation: glitch1 2.5s infinite;
 
     &::after {
       background-color: #1d3162;
@@ -17,35 +17,35 @@ const Container = styled(Box)`
 
     &::after {
       content: '';
-      position: absolute;
       height: 100%;
       left: 0;
+      position: absolute;
       top: 0;
       width: 100%;
     }
   }
 
   div:first-child {
+    animation: glitch2 2.5s infinite;
     background: #29ffc4;
     position: absolute;
     z-index: 1;
-    animation: glitch2 2.5s infinite;
 
     img {
-      mix-blend-mode: multiply; // multiply, darken, lighten
       filter: grayscale(100%) contrast(1);
+      mix-blend-mode: multiply; // multiply, darken, lighten
     }
   }
 
   div:last-child {
+    animation: glitch3 2.5s infinite;
     background: #f32959;
     position: absolute;
     z-index: 2;
-    animation: glitch3 2.5s infinite;
 
     img {
-      mix-blend-mode: darken; // multiply, darken, lighten
       filter: grayscale(100%) contrast(1);
+      mix-blend-mode: darken; // multiply, darken, lighten
     }
   }
 `;
