@@ -1,5 +1,5 @@
 import fetcher from '@/utils/fetcher';
-import { Box, Icon, Image, Link, Skeleton, Stack, Text } from '@chakra-ui/core';
+import { Box, Icon, Link, Skeleton, Stack, Text } from '@chakra-ui/core';
 import useSWR from 'swr';
 import ImageGlitch from './ImageGlitch';
 
