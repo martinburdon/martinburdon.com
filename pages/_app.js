@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core';
+import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core';
 import { Global, css } from '@emotion/core';
 
 import customTheme from '@/styles/theme';
@@ -8,194 +8,49 @@ const GlobalStyle = ({ children }) => {
   return (
     <>
       <Head>
+        <title>Martin Burdon</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <CSSReset />
       <Global
         styles={css`
+          :root {
+            --gray-50: #f9fafb;
+            --gray-100: #f1f1f4;
+            --gray-200: #e2e4e9;
+            --gray-300: #d4d6de;
+            --gray-400: #c5c9d3;
+            --gray-500: #9aa0b1;
+            --gray-600: #636b83;
+            --gray-700: #2f3850;
+            --gray-800: #161c2c;
+            --gray-900: #090c14;
+            --teal-50: #dcfff6;
+            --teal-100: #b0ffe3;
+            --teal-200: #80ffce;
+            --teal-300: #50ffc6;
+            --teal-400: #29ffc4;
+            --teal-500: #19e6b6;
+            --teal-600: #0bb39a;
+            --teal-700: #008079;
+            --teal-800: #004d4d;
+            --teal-900: #001b1;
+          }
+
           html {
             scroll-behavior: smooth;
           }
 
           #__next {
-            background: #090c14;
+            background: var(--gray-900);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
           }
 
-          .wrapper > * {
-            grid-column: 2;
-          }
-
-          .full-bleed {
-            grid-column: 1 / 4;
-            width: 100%;
-          }
-
-          @keyframes glitch1 {
-            0% {
-              transform: none;
-              opacity: 0.5;
-            }
-            7% {
-              transform: skew(-0.3deg, -0.6deg);
-              opacity: 0;
-            }
-            10% {
-              transform: none;
-              opacity: 0.7;
-            }
-            27% {
-              transform: none;
-              opacity: 1;
-            }
-            30% {
-              transform: skew(0.4deg, -0.1deg);
-              opacity: 0.8;
-            }
-            35% {
-              transform: none;
-              opacity: 1;
-            }
-            52% {
-              transform: none;
-              opacity: 1;
-            }
-            55% {
-              transform: skew(-1deg, 0.2deg);
-              opacity: 0;
-            }
-            50% {
-              transform: none;
-              opacity: 1;
-            }
-            72% {
-              transform: none;
-              opacity: 0.2;
-            }
-            75% {
-              transform: skew(0.4deg, 1deg);
-              opacity: 0;
-            }
-            80% {
-              transform: none;
-              opacity: 0.2;
-            }
-            100% {
-              transform: none;
-              opacity: 1;
-            }
-          }
-
-          @keyframes glitch2 {
-            0% {
-              transform: none;
-              opacity: 0.25;
-            }
-            7% {
-              transform: translate(-2px, -3px);
-              opacity: 0.5;
-            }
-            10% {
-              transform: none;
-              opacity: 0.25;
-            }
-            27% {
-              transform: none;
-              opacity: 0.25;
-            }
-            30% {
-              transform: translate(-5px, -2px);
-              opacity: 0.5;
-            }
-            35% {
-              transform: none;
-              opacity: 0.25;
-            }
-            52% {
-              transform: none;
-              opacity: 0.25;
-            }
-            55% {
-              transform: translate(-5px, -1px);
-              opacity: 0.5;
-            }
-            50% {
-              transform: none;
-              opacity: 0.25;
-            }
-            72% {
-              transform: none;
-              opacity: 0.25;
-            }
-            75% {
-              transform: translate(-2px, -6px);
-              opacity: 0.5;
-            }
-            80% {
-              transform: none;
-              opacity: 0.25;
-            }
-            100% {
-              transform: none;
-              opacity: 0.25;
-            }
-          }
-
-          @keyframes glitch3 {
-            0% {
-              transform: none;
-              opacity: 0.25;
-            }
-            7% {
-              transform: translate(2px, 3px);
-              opacity: 0.5;
-            }
-            10% {
-              transform: none;
-              opacity: 0.25;
-            }
-            27% {
-              transform: none;
-              opacity: 0.25;
-            }
-            30% {
-              transform: translate(5px, 2px);
-              opacity: 0.5;
-            }
-            35% {
-              transform: none;
-              opacity: 0.25;
-            }
-            52% {
-              transform: none;
-              opacity: 0.25;
-            }
-            55% {
-              transform: translate(5px, 1px);
-              opacity: 0.5;
-            }
-            50% {
-              transform: none;
-              opacity: 0.25;
-            }
-            72% {
-              transform: none;
-              opacity: 0.25;
-            }
-            75% {
-              transform: translate(2px, 6px);
-              opacity: 0.5;
-            }
-            80% {
-              transform: none;
-              opacity: 0.25;
-            }
-            100% {
-              transform: none;
-              opacity: 0.25;
-            }
+          ::selection {
+            background-color: #29ffc4;
+            color: #004d4d;
           }
         `}
       />
@@ -207,8 +62,11 @@ const GlobalStyle = ({ children }) => {
 function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={customTheme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
+      <ColorModeProvider value="dark">
+        <GlobalStyle>
+          <Component {...pageProps} />
+        </GlobalStyle>
+      </ColorModeProvider>
     </ThemeProvider>
   );
 }
