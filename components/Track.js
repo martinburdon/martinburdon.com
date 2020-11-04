@@ -6,9 +6,9 @@ const Track = ({ artist, image, ranking, songUrl, title }) => {
       <Text
         alignSelf="center"
         mr={4}
-        color="teal.600"
+        color="var(--teal-600)"
         fontSize="sm"
-        backgroundColor="gray.800"
+        backgroundColor="var(--gray-800)"
         borderRadius={20}
         h="20px"
         w="20px"
@@ -26,10 +26,10 @@ const Track = ({ artist, image, ranking, songUrl, title }) => {
         width="40px"
       />
       <Stack spacing={0}>
-        <Link color="gray.200" href={songUrl} isExternal>
+        <Link color="var(--gray-200)" href={songUrl} isExternal>
           {artist}
         </Link>
-        <Text color="gray.600" fontSize="sm">
+        <Text color="var(--gray-600)" fontSize="sm">
           {title}
         </Text>
       </Stack>

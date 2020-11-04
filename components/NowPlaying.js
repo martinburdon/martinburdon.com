@@ -16,7 +16,7 @@ const NowPlaying = () => {
       borderRadius={8}
       p={4}
       w="300px"
-      backgroundColor="gray.800"
+      backgroundColor="var(--gray-800)"
     >
       <Skeleton isLoaded={data}>
         <ImageGlitch
@@ -30,7 +30,7 @@ const NowPlaying = () => {
       </Skeleton>
       <Stack spacing={0} height="100%">
         <Link
-          color="gray.100"
+          color="var(--gray-100)"
           maxWidth="170px"
           whiteSpace="nowrap"
           overflow="hidden"
@@ -41,7 +41,7 @@ const NowPlaying = () => {
           {data && (data?.title || 'Not playing')}
         </Link>
         <Text
-          color="gray.500"
+          color="var(--gray-500)"
           fontSize="sm"
           maxWidth="170px"
           overflow="hidden"
