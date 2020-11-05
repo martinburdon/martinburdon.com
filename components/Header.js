@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { Flex, List, ListItem, Text } from '@chakra-ui/core';
+import TextGlitch from '@/components/TextGlitch';
 import styled from '@emotion/styled';
 
-const Heading = styled(Text)`
+const Logo = styled.a`
   color: var(--teal-400);
   font-family: 'Roboto Mono';
   font-size: 1.4rem;
@@ -36,28 +37,32 @@ const Header = () => {
       justifyContent="space-between"
       p={[8, 16]}
     >
-      <Heading as="h1">
-        <span>Martin</span>
-        <span>Burdon</span>
-      </Heading>
+      <Link href="/" passHref>
+        <Logo>
+          <TextGlitch iterationCount="1">
+            <span>Martin</span>
+            <span>Burdon</span>
+          </TextGlitch>
+        </Logo>
+      </Link>
       <List display="flex">
         <ListItem>
-          <Link href="/">
+          <Link href="/" passHref>
             <NavAnchor>Home</NavAnchor>
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/dashboard">
+          <Link href="/dashboard" passHref>
             <NavAnchor>Dashboard</NavAnchor>
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/code">
+          <Link href="/code" passHref>
             <NavAnchor>Code</NavAnchor>
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="/photos">
+          <Link href="/photos" passHref>
             <NavAnchor>Photos</NavAnchor>
           </Link>
         </ListItem>

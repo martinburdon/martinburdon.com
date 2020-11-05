@@ -19,11 +19,11 @@ const GlobalStyle = ({ children }) => {
             --gray-100: #f1f1f4;
             --gray-200: #e2e4e9;
             --gray-300: #d4d6de;
-            --gray-400: #c5c9d3;
-            --gray-500: #9aa0b1;
-            --gray-600: #636b83;
-            --gray-700: #2f3850;
-            --gray-800: #161c2c;
+            --gray-400: #9aa0b1;
+            --gray-500: #636b83;
+            --gray-600: #2f3850;
+            --gray-700: #161c2c;
+            --gray-800: #111622;
             --gray-900: #090c14;
             --teal-50: #dcfff6;
             --teal-100: #b0ffe3;
@@ -38,6 +38,9 @@ const GlobalStyle = ({ children }) => {
           }
 
           html {
+            font-family: 'Roboto', 'Roboto Mono' -apple-system,
+              BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+              'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
             scroll-behavior: smooth;
           }
 
