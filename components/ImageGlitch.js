@@ -7,6 +7,8 @@ const Container = styled(Box)`
 
   div {
     animation: glitch1 2.5s infinite;
+    border-radius: 2px;
+    overflow: hidden;
     position: relative;
     z-index: 3;
 

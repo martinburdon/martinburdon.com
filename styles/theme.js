@@ -6,6 +6,7 @@ const theme = {
     ...chakraTheme.fonts,
     body: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`
   },
+  breakpoints: ['340px', '560px'],
   fontWeights: {
     normal: 400,
     medium: 600,
@@ -86,7 +87,5 @@ const theme = {
     }
   }
 };
-
-console.log(theme);
 
 export default theme;

@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <Flex as="main" direction="column" p={[8, 16]}>
+      <Flex as="main" direction="column" p={[8, 8, 16]} flex="1 1 auto">
         {children}
       </Flex>
       <Footer />

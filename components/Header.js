@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Flex, List, ListItem, Text } from '@chakra-ui/core';
+import { Flex, List, ListItem } from '@chakra-ui/core';
 import TextGlitch from '@/components/TextGlitch';
 import styled from '@emotion/styled';
 
@@ -35,7 +35,8 @@ const Header = () => {
       as="header"
       alignItems="center"
       justifyContent="space-between"
-      p={[8, 16]}
+      flexDirection={['column', 'column', 'row']}
+      p={[8, 8, 16]}
     >
       <Link href="/" passHref>
         <Logo>
@@ -45,7 +46,7 @@ const Header = () => {
           </TextGlitch>
         </Logo>
       </Link>
-      <List display="flex">
+      <List display="flex" mt={[4, 4, 0]}>
         <ListItem>
           <Link href="/" passHref>
             <NavAnchor>Home</NavAnchor>

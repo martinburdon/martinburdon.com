@@ -16,7 +16,7 @@ const NowPlaying = () => {
       borderRadius={8}
       p={4}
       w="300px"
-      backgroundColor="var(--gray-800)"
+      backgroundColor="var(--gray-900)"
     >
       <Skeleton isLoaded={data}>
         <ImageGlitch
@@ -28,7 +28,7 @@ const NowPlaying = () => {
           width="50px"
         />
       </Skeleton>
-      <Stack spacing={0} height="100%">
+      <Stack spacing={0} height="100%" alignSelf="Center">
         <Link
           color="var(--gray-100)"
           maxWidth="170px"
