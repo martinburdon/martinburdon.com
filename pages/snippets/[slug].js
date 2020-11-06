@@ -2,10 +2,12 @@ import MDX from "@mdx-js/runtime"
 import Layout from "@/components/Layout";
 import { getAllSnippets, getSnippetBySlug } from "@/utils/snippets";
 import TextGlitch from "@/components/TextGlitch";
+import Code from "@/components/Code";
 
 const Snippet = ({ snippet }) => {
   const components = {
-    TextGlitch: (props) => <TextGlitch {...props} />
+    TextGlitch: (props) => <TextGlitch {...props} />,
+    code: (props) => <Code {...props} />
   };
 
   return (
