@@ -58,6 +58,11 @@ const Header = () => {
           </Link>
         </ListItem>
         <ListItem>
+          <Link href="/snippets" passHref>
+            <NavAnchor>Snippets</NavAnchor>
+          </Link>
+        </ListItem>
+        <ListItem>
           <Link href="/code" passHref>
             <NavAnchor>Code</NavAnchor>
           </Link>

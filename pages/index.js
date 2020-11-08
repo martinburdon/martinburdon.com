@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout';
 import TextGlitch from '@/components/TextGlitch';
+import Code from '@/components/Code';
 import styled from '@emotion/styled';
 
 const StyledGlitch = styled(TextGlitch)`
@@ -10,9 +11,14 @@ const StyledGlitch = styled(TextGlitch)`
 `;
 
 const Home = () => {
+  const exampleCode = `
+  <div>hi</div>
+  `.trim();
+
   return (
     <Layout>
       The home page
+      <Code className="html">{exampleCode}</Code>
       <StyledGlitch>Testing</StyledGlitch>
     </Layout>
   );

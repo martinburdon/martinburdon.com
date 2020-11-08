@@ -1,22 +1,61 @@
-import Highlight, {defaultProps} from 'prism-react-renderer'
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/dracula';
+import styled from '@emotion/styled';
 
-export default ({children, className}) => {
-  const language = className.replace(/language-/, '')
-  
+const Wrapper = styled.div`
+  position: relative;
+  margin: 40px 0;
+`;
+
+const Pre = styled.pre`
+  border-radius: 4px 0 4px 4px;
+  padding: 20px;
+  position: relative;
+  overflow-x: auto;
+  cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAaCAMAAABigZc2AAAACVBMVEX///8AAAD///9+749PAAAAAXRSTlMAQObYZgAAAFpJREFUeNp9jUEOwEAIAhn+/+imjbs1bC0XzQioSUAAYZs0mcVY051RbGXfFsyxibTVHXhuhXYlbuRGPbe7kz3g0wf679OuizDBdCaberLE4AsjGliD02eNugA+MQFAPqynHQAAAABJRU5ErkJggg==),
+    auto;
+`;
+
+const Language = styled.span`
+  border-radius: 4px 4px 0 0;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 12px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 0;
+  transform: translateY(-100%);
+  right: 0;
+`;
+
+const Code = ({ children, className }) => {
+  const language = className.replace(/language-/, '');
+
   return (
-    <Highlight {...defaultProps} code={children} language={language} theme={dracula}>
-      {({className, style, tokens, getLineProps, getTokenProps}) => (
-        <pre className={className} style={{...style, padding: '20px'}}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({line, key: i})}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({token, key})} />
-              ))}
-            </div>
-          ))}
-        </pre>
+    <Highlight
+      {...defaultProps}
+      code={children.trim()}
+      language={language}
+      theme={dracula}
+    >
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <Wrapper>
+          <Language style={{ ...style }}>{language}</Language>
+          <Pre className={className} style={{ ...style }}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => {
+                  return <span key={key} {...getTokenProps({ token, key })} />;
+                })}
+              </div>
+            ))}
+          </Pre>
+        </Wrapper>
       )}
     </Highlight>
-  )
-}
+  );
+};
+
+export default Code;

@@ -1,30 +1,36 @@
-import MDX from "@mdx-js/runtime"
-import Layout from "@/components/Layout";
-import { getAllSnippets, getSnippetBySlug } from "@/utils/snippets";
-import TextGlitch from "@/components/TextGlitch";
-import Code from "@/components/Code";
+import MDX from '@mdx-js/runtime';
+import Layout from '@/components/Layout';
+import { getAllSnippets, getSnippetBySlug } from '@/utils/snippets';
+import TextGlitch from '@/components/TextGlitch';
+import Code from '@/components/Code';
 
 const Snippet = ({ snippet }) => {
   const components = {
     TextGlitch: (props) => <TextGlitch {...props} />,
+    pre: (props) => <div {...props} />,
     code: (props) => <Code {...props} />
   };
 
   return (
     <Layout>
-      A snippet...
-      <MDX components={components}>{snippet.content}</MDX>
+      <MDX components={components}>{snippet?.content}</MDX>
     </Layout>
-  )
+  );
 };
 
 export default Snippet;
 
 export async function getStaticProps({ params }) {
-  const snippet = getSnippetBySlug(params.slug, ['content', 'name', 'description', 'date', 'slug']);
+  const snippet = getSnippetBySlug(params.slug, [
+    'content',
+    'name',
+    'description',
+    'date',
+    'slug'
+  ]);
   return {
     props: { snippet }
-  }
+  };
 }
 
 export async function getStaticPaths() {
@@ -33,8 +39,8 @@ export async function getStaticPaths() {
     paths: snippets.map((snippet) => {
       return {
         params: { ...snippet }
-      }
+      };
     }),
     fallback: true
-  }
+  };
 }

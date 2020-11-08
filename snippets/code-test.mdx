@@ -8,8 +8,25 @@ date: '2020-11-06T13:25:28.000Z'
 
 <TextGlitch>YOLO!</TextGlitch>
 
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+export default function InPortal({ id, children }) {
+  const [hasMounted, setHasMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) return null;
+
+  return ReactDOM.createPortal(children, document.querySelector(`#${id}`));
+}
+```
+
 ```js
-function hello () {
+function hello() {
   const foo = 'Testing...';
   let bar = '...some JS';
   return `${foo} - ${bar}`;
