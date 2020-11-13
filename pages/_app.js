@@ -35,12 +35,19 @@ const GlobalStyle = ({ children }) => {
             --teal-700: #008079;
             --teal-800: #004d4d;
             --teal-900: #001b1;
+            --blue-50: #ede4ff;
+            --blue-100: #c4b2ff;
+            --blue-200: #9980ff;
+            --blue-300: #6a4dff;
+            --blue-400: #4f1bfe;
+            --blue-500: #4601e5;
+            --blue-600: #4100b3;
+            --blue-700: #360081;
+            --blue-800: #25004f;
+            --blue-900: #100020;
           }
 
           html {
-            font-family: 'Roboto', 'Roboto Mono' -apple-system,
-              BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
-              'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
             scroll-behavior: smooth;
           }
 

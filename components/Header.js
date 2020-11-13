@@ -36,7 +36,8 @@ const Header = () => {
       alignItems="center"
       justifyContent="space-between"
       flexDirection={['column', 'column', 'row']}
-      p={[8, 8, 16]}
+      px={[8, 8, 16]}
+      py={8}
     >
       <Link href="/" passHref>
         <Logo>
@@ -60,16 +61,6 @@ const Header = () => {
         <ListItem>
           <Link href="/snippets" passHref>
             <NavAnchor>Snippets</NavAnchor>
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/code" passHref>
-            <NavAnchor>Code</NavAnchor>
-          </Link>
-        </ListItem>
-        <ListItem>
-          <Link href="/photos" passHref>
-            <NavAnchor>Photos</NavAnchor>
           </Link>
         </ListItem>
       </List>

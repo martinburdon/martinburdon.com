@@ -1,46 +1,21 @@
 ---
-name: 'Code test'
-description: 'Testing code'
-date: '2020-11-06T13:25:28.000Z'
+name: 'setTimeout with async/await'
+description: 'When you need to use a setTimeout but you are using async/await'
+date: '2020-11-08T20:42:05.000Z'
 ---
 
-# Test code 🔥
-
-<TextGlitch>YOLO!</TextGlitch>
-
-```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-export default function InPortal({ id, children }) {
-  const [hasMounted, setHasMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) return null;
-
-  return ReactDOM.createPortal(children, document.querySelector(`#${id}`));
-}
-```
+## Snippet
 
 ```js
-function hello() {
-  const foo = 'Testing...';
-  let bar = '...some JS';
-  return `${foo} - ${bar}`;
-}
+const delay = (duration) =>
+  new Promise((resolve) => setTimeout(resolve, duration));
 ```
 
-```html
-<div>
-  <p>Testing some HTML</p>
-</div>
+## Usage
+
+```js
+// Wait 3 seconds
+await delay(3000);
 ```
 
-```css
-.p {
-  color: #333;
-}
-```
+### h3
