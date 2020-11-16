@@ -1,6 +1,7 @@
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import dracula from 'prism-react-renderer/themes/dracula';
 import styled from '@emotion/styled';
+import { useRef } from 'react';
 
 const Wrapper = styled.div`
   position: relative;
@@ -30,8 +31,23 @@ const Language = styled.span`
   right: 0;
 `;
 
+const Textarea = styled.textarea`
+  bottom: 10px;
+  height: 1px;
+  left: 10px;
+  position: absolute;
+  width: 1px;
+  z-index: -1;
+`;
+
 const Code = ({ children, className }) => {
+  const textareaRef = useRef(null);
   const language = className.replace(/language-/, '');
+
+  const onClick = () => {
+    textareaRef.current.select();
+    document.execCommand('copy');
+  }
 
   return (
     <Highlight
@@ -43,7 +59,7 @@ const Code = ({ children, className }) => {
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Wrapper>
           <Language style={{ ...style }}>{language}</Language>
-          <Pre className={className} style={{ ...style }}>
+          <Pre className={className} style={{ ...style }} onClick={onClick}>
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => {
@@ -52,6 +68,7 @@ const Code = ({ children, className }) => {
               </div>
             ))}
           </Pre>
+          <Textarea value={children} ref={textareaRef} readOnly />
         </Wrapper>
       )}
     </Highlight>

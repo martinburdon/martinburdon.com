@@ -48,6 +48,7 @@ const GlobalStyle = ({ children }) => {
           }
 
           html {
+            color: var(--gray-50);
             scroll-behavior: smooth;
           }
 
@@ -59,8 +60,8 @@ const GlobalStyle = ({ children }) => {
           }
 
           ::selection {
-            background-color: #29ffc4;
-            color: #004d4d;
+            background-color: var(--teal-400);
+            color: var(--teal-800);
           }
         `}
       />
