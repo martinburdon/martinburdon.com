@@ -47,7 +47,7 @@ const Code = ({ children, className }) => {
   const onClick = () => {
     textareaRef.current.select();
     document.execCommand('copy');
-  }
+  };
 
   return (
     <Highlight
@@ -68,6 +68,7 @@ const Code = ({ children, className }) => {
               </div>
             ))}
           </Pre>
+          {/* Hidden text area containing snippet, used for copy to clipboard */}
           <Textarea value={children} ref={textareaRef} readOnly />
         </Wrapper>
       )}

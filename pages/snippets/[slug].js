@@ -29,6 +29,7 @@ const Snippet = ({ snippet }) => {
 
 export default Snippet;
 
+// Get the frontmatter attrs and content for a snippet given its slug
 export async function getStaticProps({ params }) {
   const snippet = getSnippetBySlug(params.slug, [
     'content',
@@ -42,6 +43,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
+// Get paths to all snippets so they can be statically generated
 export async function getStaticPaths() {
   const snippets = getAllSnippets(['slug']);
   return {
