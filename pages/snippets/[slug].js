@@ -20,7 +20,7 @@ const Snippet = ({ snippet }) => {
   return (
     <Layout>
       <article>
-        <H1>{snippet.name}</H1>
+        <H1>{snippet?.name}</H1>
         <MDX components={components}>{snippet?.content}</MDX>
       </article>
     </Layout>
