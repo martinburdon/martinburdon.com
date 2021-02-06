@@ -52,6 +52,6 @@ export async function getStaticPaths() {
         params: { ...snippet }
       };
     }),
-    fallback: true
+    fallback: false
   };
 }
