@@ -13,7 +13,7 @@ export default async (_, res) => {
   const { downloads, views } = await toJson(userStats);
 
   return res.status(200).json({
-    downloads: downloads.total,
-    views: views.total
+    downloads: downloads?.total || '0',
+    views: views?.total || '0'
   });
 };

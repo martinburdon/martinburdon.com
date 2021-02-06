@@ -1,0 +1,36 @@
+---
+name: 'Detect when an element becomes sticky'
+description: 'Change styles by detecting when an element with position: sticky; becomes stuck'
+date: '2020-11-13T14:44:05.000Z'
+---
+
+## Snippet
+
+```css
+.sticky-el {
+  position: sticky;
+  top: -1px;
+}
+
+.is-stuck {
+  color: red;
+}
+```
+
+```js
+const el = document.querySelector('.sticky-el')
+const observer = new IntersectionObserver( 
+  ([e]) => e.target.classList.toggle('is-stuck', e.intersectionRatio < 1),
+  { threshold: [1] }
+);
+
+observer.observe(el);
+```
+
+## Usage
+
+Using an `IntersectionObserver` we can detect when a `position: sticky;` element becomes stuck! We can then apply different styles based on whether it's stuck or not such as reducing the size of a header/nav area when scrolling down a page.
+
+### Source
+
+Original idea from [davidwalsh.name](https://davidwalsh.name/detect-sticky)

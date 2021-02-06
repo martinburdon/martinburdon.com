@@ -1,0 +1,19 @@
+---
+name: 'setTimeout with async/await'
+description: 'When you need to use a setTimeout but you are using async/await'
+date: '2020-11-08T20:42:05.000Z'
+---
+
+## Snippet
+
+```js
+const delay = (duration) =>
+  new Promise((resolve) => setTimeout(resolve, duration));
+```
+
+## Usage
+
+```js
+// Wait 3 seconds
+await delay(3000);
+```
