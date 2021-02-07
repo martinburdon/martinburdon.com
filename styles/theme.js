@@ -2,44 +2,6 @@ import { theme as chakraTheme } from '@chakra-ui/core';
 
 const theme = {
   ...chakraTheme,
-  fonts: {
-    ...chakraTheme.fonts,
-    body: `Roboto, Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
-    mono: `'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace`
-  },
-  breakpoints: ['340px', '560px'],
-  fontWeights: {
-    normal: 400,
-    medium: 600,
-    bold: 700
-  },
-  colors: {
-    ...chakraTheme.colors,
-    gray: {
-      50: '#eef1f9',
-      100: '#d3d6de',
-      200: '#b7bbc5',
-      300: '#9a9faf',
-      400: '#7e8498',
-      500: '#646b7e',
-      600: '#4e5363',
-      700: '#383b47',
-      800: '#21242c',
-      900: '#090c14'
-    },
-    teal: {
-      50: '#dcfff6',
-      100: '#b0ffe3',
-      200: '#80ffce',
-      300: '#50ffc6',
-      400: '#29ffc4',
-      500: '#19e6b6',
-      600: '#0bb39a',
-      700: '#008079',
-      800: '#004d4d',
-      900: '#001b1a'
-    }
-  },
   icons: {
     ...chakraTheme.icons,
     github: {

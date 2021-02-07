@@ -30,26 +30,28 @@ const NavAnchor = styled.a`
 const Header = () => {
   return (
     <header>
-      <Link href="/" passHref>
-        <Logo>Martin Burdon</Logo>
-      </Link>
-      <ul>
-        <li>
-          <Link href="/" passHref>
-            <NavAnchor>Home</NavAnchor>
-          </Link>
-        </li>
-        <li>
-          <Link href="/dashboard" passHref>
-            <NavAnchor>Dashboard</NavAnchor>
-          </Link>
-        </li>
-        <li>
-          <Link href="/snippets" passHref>
-            <NavAnchor>Snippets</NavAnchor>
-          </Link>
-        </li>
-      </ul>
+      <div>
+        <Link href="/" passHref>
+          <Logo>Martin Burdon</Logo>
+        </Link>
+        <ul>
+          <li>
+            <Link href="/" passHref>
+              <NavAnchor>Home</NavAnchor>
+            </Link>
+          </li>
+          <li>
+            <Link href="/dashboard" passHref>
+              <NavAnchor>Dashboard</NavAnchor>
+            </Link>
+          </li>
+          <li>
+            <Link href="/snippets" passHref>
+              <NavAnchor>Snippets</NavAnchor>
+            </Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };

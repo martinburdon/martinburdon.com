@@ -1,0 +1,49 @@
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+
+  code {
+    background: var(--teal-400);
+    color: var(--teal-800);
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+}
+
+a {
+  color: var(--teal-400);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h2,
+h3 {
+  color: var(--gray-50);
+  line-height: 1.2;
+  margin: 48px 0 16px;
+}
+
+h1 {
+  color: var(--teal-400);
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 20px;
+}

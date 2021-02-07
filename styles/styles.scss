@@ -1,5 +1,8 @@
+@import '_reset', '_vars', '_type', '_layout';
+
 html {
   color: var(--gray-50);
+  font-family: var(--fontFamily-body);
   scroll-behavior: smooth;
 }
 
