@@ -9,12 +9,7 @@ const Snippet = ({ snippet }) => {
   const components = {
     TextGlitch: (props) => <TextGlitch {...props} />,
     pre: (props) => <div {...props} />,
-    code: (props) => <Code {...props} />,
-    p: (props) => <P {...props} />,
-    a: (props) => <A {...props} />,
-    h1: (props) => <H1 {...props} />,
-    h2: (props) => <H2 {...props} />,
-    h3: (props) => <H3 {...props} />
+    code: (props) => <Code {...props} />
   };
 
   return (

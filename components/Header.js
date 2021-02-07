@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import { Flex, List, ListItem } from '@chakra-ui/core';
-import TextGlitch from '@/components/TextGlitch';
 import styled from '@emotion/styled';
 
 const Logo = styled.a`
@@ -31,40 +29,28 @@ const NavAnchor = styled.a`
 
 const Header = () => {
   return (
-    <Flex
-      as="header"
-      alignItems="center"
-      justifyContent="space-between"
-      flexDirection={['column', 'column', 'row']}
-      px={[8, 8, 16]}
-      py={8}
-    >
+    <header>
       <Link href="/" passHref>
-        <Logo>
-          <TextGlitch iterationCount="1">
-            <span>Martin</span>
-            <span>Burdon</span>
-          </TextGlitch>
-        </Logo>
+        <Logo>Martin Burdon</Logo>
       </Link>
-      <List display="flex" mt={[4, 4, 0]}>
-        <ListItem>
+      <ul>
+        <li>
           <Link href="/" passHref>
             <NavAnchor>Home</NavAnchor>
           </Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link href="/dashboard" passHref>
             <NavAnchor>Dashboard</NavAnchor>
           </Link>
-        </ListItem>
-        <ListItem>
+        </li>
+        <li>
           <Link href="/snippets" passHref>
             <NavAnchor>Snippets</NavAnchor>
           </Link>
-        </ListItem>
-      </List>
-    </Flex>
+        </li>
+      </ul>
+    </header>
   );
 };
 

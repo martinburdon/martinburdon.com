@@ -1,39 +1,22 @@
-import { Flex, Image, Link, Stack, Text } from '@chakra-ui/core';
+import Link from 'next/link';
 
 const Track = ({ artist, image, ranking, songUrl, title }) => {
   return (
-    <Flex mb={6}>
-      <Text
-        alignSelf="center"
-        mr={4}
-        color="var(--teal-600)"
-        fontSize="sm"
-        backgroundColor="var(--gray-800)"
-        borderRadius={20}
-        h="20px"
-        w="20px"
-        fontWeight="bold"
-        textAlign="center"
-      >
-        {ranking}
-      </Text>
-      <Image
+    <div>
+      <p>{ranking}</p>
+      <img
         alt={`${artist} - ${title}`}
-        borderRadius={4}
         height="40px"
-        mr={4}
         src={image}
         width="40px"
       />
-      <Stack spacing={0}>
-        <Link color="var(--gray-200)" href={songUrl} isExternal>
-          {artist}
+      <div>
+        <Link href={songUrl}>
+          <a target="_blank">{artist}</a>
         </Link>
-        <Text color="var(--gray-600)" fontSize="sm">
-          {title}
-        </Text>
-      </Stack>
-    </Flex>
+        <p>{title}</p>
+      </div>
+    </div>
   );
 };
 

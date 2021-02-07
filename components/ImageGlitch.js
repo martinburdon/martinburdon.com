@@ -1,7 +1,6 @@
-import { Box, Image } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
-const Container = styled(Box)`
+const Container = styled.div`
   display: flex;
   position: relative;
 
@@ -219,9 +218,9 @@ const Container = styled(Box)`
 
 const ImageGlitch = ({ src, alt, ...rest }) => {
   const images = [...Array(3)].map((_, x) => (
-    <Box key={x}>
-      <Image src={src} alt={alt} />
-    </Box>
+    <div key={x}>
+      <img src={src} alt={alt} />
+    </div>
   ));
   return <Container {...rest}>{images}</Container>;
 };

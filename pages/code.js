@@ -1,10 +1,9 @@
 import Layout from '@/components/Layout';
-import { Heading } from '@chakra-ui/core';
 
 const Code = () => {
   return (
     <Layout>
-      <Heading as="h1">Code</Heading>
+      <h1>Code</h1>
     </Layout>
   );
 };

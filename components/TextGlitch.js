@@ -1,7 +1,6 @@
-import { Box, Text } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
-const Container = styled(Box)`
+const Container = styled(div)`
   display: flex;
   position: relative;
 
@@ -197,7 +196,7 @@ const Container = styled(Box)`
 `;
 
 const TextGlitch = ({ children, iterationCount = 'infinite', ...rest }) => {
-  const layers = [...Array(3)].map((_, x) => <Text key={x}>{children}</Text>);
+  const layers = [...Array(3)].map((_, x) => <p key={x}>{children}</p>);
   return (
     <Container iterationCount={iterationCount} {...rest}>
       {layers}

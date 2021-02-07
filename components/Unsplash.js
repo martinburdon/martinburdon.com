@@ -1,6 +1,5 @@
 import fetcher from '@/utils/fetcher';
 import { formatNumber } from '@/utils/formatting';
-import { Grid } from '@chakra-ui/core';
 import useSWR from 'swr';
 import StatCard from '@/components/StatCard';
 
@@ -10,10 +9,10 @@ const Unsplash = () => {
   const views = formatNumber(data?.views);
 
   return (
-    <Grid templateColumns="repeat(auto-fill,minmax(200px,1fr))" gap={4}>
+    <div>
       <StatCard label="Unsplash Downloads" value={downloads}></StatCard>
       <StatCard label="Unsplash Views" value={views}></StatCard>
-    </Grid>
+    </div>
   );
 };
 
