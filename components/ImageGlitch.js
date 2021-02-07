@@ -4,6 +4,10 @@ const Container = styled.div`
   display: flex;
   position: relative;
 
+  img {
+    display: block;
+  }
+
   div {
     animation: glitch1 2.5s infinite;
     border-radius: 2px;

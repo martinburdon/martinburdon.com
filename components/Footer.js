@@ -4,6 +4,13 @@ import styled from '@emotion/styled';
 
 const FooterStyled = styled.footer`
   background: var(--gray-800);
+  padding: 0 60px 60px;
+
+  > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Footer = () => {
