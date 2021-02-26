@@ -2,6 +2,12 @@ import Link from 'next/link';
 import NowPlaying from '@/components/NowPlaying';
 import styled from '@emotion/styled';
 
+const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+`;
+
 const FooterStyled = styled.footer`
   background: var(--gray-800);
   padding: 0 60px 60px;
@@ -15,7 +21,7 @@ const FooterStyled = styled.footer`
 
 const Footer = () => {
   return (
-    <>
+    <FooterContainer>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="var(--gray-800)"
@@ -45,7 +51,7 @@ const Footer = () => {
           </div>
         </div>
       </FooterStyled>
-    </>
+    </FooterContainer>
   );
 };
 
