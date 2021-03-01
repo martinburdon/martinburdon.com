@@ -8,6 +8,7 @@ export default async (_, res) => {
   }
 
   const song = await response.json();
+  console.log(song);
   // NOTE: currently_playing_type returns `track` for music and `episode` for podcasts
   // TODO: Support for podcasts
   const type = song.currently_playing_type === 'track' ? 'music' : 'podcast';

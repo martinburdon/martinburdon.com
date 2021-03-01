@@ -13,6 +13,12 @@ const NowPlayingStyled = styled.div`
   width: 300px;
 `;
 
+const Thumb = styled.img`
+  height: 50px;
+  margin-right: 15px;
+  width: 50px;
+`;
+
 const ImageGlitchStyled = styled(ImageGlitch)`
   height: 50px;
   margin-right: 15px;
@@ -26,9 +32,11 @@ const MetaContainer = styled.div`
   height: 100%;
 `;
 
-const SongLink = styled.a`
+const SongText = styled.p`
   color: var(--gray-100);
-  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  margin: 0 0 4px;
   max-width: 170px;
   overflow: hidden;
   text-decoration: none;
@@ -39,6 +47,7 @@ const SongLink = styled.a`
 const ArtistText = styled.p`
   color: var(--gray-500);
   font-size: 14px;
+  line-height: 1;
   margin: 0;
   max-width: 170px;
   overflow: hidden;
@@ -50,20 +59,24 @@ const NowPlaying = () => {
   const { data } = useSWR('/api/now-playing', fetcher);
 
   if (!data) return 'Loading';
-
+  
   return (
     <NowPlayingStyled>
-      <ImageGlitchStyled
-        alt="Spotify album cover"
-        src={data?.image || '/static/images/placeholder.jpg'}
-      />
+      {data.isPlaying ?
+        <ImageGlitchStyled
+          alt="Spotify album cover"
+          src={data.isPlaying && data.image || '/static/images/placeholder.jpg'}
+        />
+        :
+        <Thumb src="/static/images/placeholder.jpg" />
+      }
       <MetaContainer>
-        <Link href={data?.songUrl} passHref>
-          <SongLink target="_blank">
-            {data && (data?.title || 'Not playing')}
-          </SongLink>
-        </Link>
-        <ArtistText>{data && (data?.artist || 'Spotify')}</ArtistText>
+        {data.isPlaying ?
+          <Link href={data.songUrl} passHref>
+            <SongText as="a" target="_blank">{data.title}</SongText>
+          </Link>
+        : <SongText>Not playing</SongText>}
+        <ArtistText>{data.isPlaying && data.artist || 'Spotify'}</ArtistText>
       </MetaContainer>
       {/* <Icon name="spotify" ml="auto" mt={1} /> */}
     </NowPlayingStyled>
