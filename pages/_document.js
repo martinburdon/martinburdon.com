@@ -82,12 +82,21 @@ class MyDocument extends Document {
             content="/favicons/ms-icon-144x144.png"
           />
           <meta name="theme-color" content="#0d121c" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          {/* <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
+            rel="stylesheet"
+          /> */}
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap"
             rel="stylesheet"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
             rel="stylesheet"
           />
         </Head>

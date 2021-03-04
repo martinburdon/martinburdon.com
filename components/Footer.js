@@ -19,6 +19,16 @@ const FooterStyled = styled.footer`
   }
 `;
 
+const FooterNav = styled.div`
+  margin-top: 40px;
+`;
+
+const FooterLink = styled.a`
+  color: var(--gray-500);
+  margin: 0 2px;
+  padding: 4px 8px;
+`;
+
 const Footer = () => {
   return (
     <FooterContainer>
@@ -32,23 +42,20 @@ const Footer = () => {
       <FooterStyled>
         <div>
           <NowPlaying />
-          <div>
-            <Link href="https://github.com/martinburdon">
-              <a target="_blank">
-                {/* <SocialIcon aria-label="GitHub" name="github" /> */}
-              </a>
+          <FooterNav>
+            <Link href="https://github.com/martinburdon" passHref>
+              <FooterLink target="_blank">GitHub</FooterLink>
             </Link>
-            <Link href="mailto:martin@martinburdon.co.uk">
-              <a target="_blank">
-                {/* <SocialIcon aria-label="Email" name="mail" /> */}
-              </a>
+            <Link href="mailto:martin@martinburdon.co.uk" passHref>
+              <FooterLink target="_blank">Email</FooterLink>
             </Link>
-            <Link href="https://instagram.com/martin870">
-              <a target="_blank">
-                {/* <SocialIcon aria-label="Instagram" name="instagram" /> */}
-              </a>
+            <Link href="https://instagram.com/martin870" passHref>
+              <FooterLink target="_blank">Instagram</FooterLink>
             </Link>
-          </div>
+            <Link href="https://twitter.com/martin870" passHref>
+              <FooterLink target="_blank">Twitter</FooterLink>
+            </Link>
+          </FooterNav>
         </div>
       </FooterStyled>
     </FooterContainer>

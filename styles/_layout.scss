@@ -4,7 +4,19 @@ footer {
   > div {
     margin: 0 auto;
     max-width: 700px;
-    padding: 20px;
+    padding: 0 20px 20px;
     width: 100%;
+
+    // All items have margin-top for vertical spacing, but first children of layout containers don't need this margin
+    > *:first-child {
+      margin-top: 0 !important;
+    }
+  }
+}
+
+header,
+main {
+  > div {
+    padding-top: 40px;
   }
 }
