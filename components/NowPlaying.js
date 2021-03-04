@@ -32,11 +32,10 @@ const MetaContainer = styled.div`
   height: 100%;
 `;
 
-const SongText = styled.p`
+const SongLabel = styled.p`
   color: var(--gray-100);
   font-size: 14px;
   line-height: 1.2;
-  margin: 0 0 4px;
   max-width: 170px;
   overflow: hidden;
   text-decoration: none;
@@ -44,11 +43,11 @@ const SongText = styled.p`
   white-space: nowrap;
 `;
 
-const ArtistText = styled.p`
+const ArtistLabel = styled.p`
   color: var(--gray-500);
   font-size: 14px;
   line-height: 1.2;
-  margin: 0;
+  margin: 4px 0 0;
   max-width: 170px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -75,14 +74,16 @@ const NowPlaying = () => {
       <MetaContainer>
         {data.isPlaying ? (
           <Link href={data.songUrl} passHref>
-            <SongText as="a" target="_blank">
+            <SongLabel as="a" target="_blank">
               {data.title}
-            </SongText>
+            </SongLabel>
           </Link>
         ) : (
-          <SongText>Not playing</SongText>
+          <SongLabel>Not playing</SongLabel>
         )}
-        <ArtistText>{(data.isPlaying && data.artist) || 'Spotify'}</ArtistText>
+        <ArtistLabel>
+          {(data.isPlaying && data.artist) || 'Spotify'}
+        </ArtistLabel>
       </MetaContainer>
       {/* <Icon name="spotify" ml="auto" mt={1} /> */}
     </NowPlayingStyled>
