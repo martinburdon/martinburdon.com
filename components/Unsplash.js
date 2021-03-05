@@ -5,6 +5,9 @@ import StatCard from '@/components/StatCard';
 
 const Unsplash = () => {
   const { data } = useSWR('/api/unsplash', fetcher);
+
+  if (!data) return 'Loading';
+  
   const downloads = formatNumber(data.downloads.total);
   const views = formatNumber(data.views.total);
 
