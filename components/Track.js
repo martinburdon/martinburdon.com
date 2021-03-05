@@ -3,8 +3,11 @@ import styled from '@emotion/styled';
 
 const TrackItem = styled.div`
   align-items: center;
+  border-top: 1px solid var(--gray-700);
   display: flex;
-  margin-top: 20px;
+  overflow: hidden;
+  padding: 20px 0;
+  position: relative;
 
   &:first-child {
     margin-top: 0;
@@ -27,6 +30,10 @@ const Thumb = styled.img`
   width: 60px;
 `;
 
+const TrackInfoContainer = styled.div`
+  z-index: 1;
+`;
+
 const SongLabel = styled.a`
   color: var(--gray-100);
   font-size: 16px;
@@ -42,22 +49,32 @@ const ArtistLabel = styled.p`
   margin: 4px 0 0;
 `;
 
+const Ranking = styled.p`
+  color: var(--gray-800);
+  font-size: 200px;
+  font-weight: 700;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  transform: rotate(25deg) translateY(10px);
+`;
+
 const Track = ({ artist, image, ranking, songUrl, title }) => {
   return (
     <TrackItem>
-      {/* <p>{ranking}</p> */}
+      <Ranking>{ranking}</Ranking>
       <Thumb
         alt={`${artist} - ${title}`}
         height="60px"
         src={image}
         width="60px"
       />
-      <div>
+      <TrackInfoContainer>
         <Link href={songUrl} passHref>
           <SongLabel target="_blank">{title}</SongLabel>
         </Link>
         <ArtistLabel>{artist}</ArtistLabel>
-      </div>
+      </TrackInfoContainer>
     </TrackItem>
   );
 };

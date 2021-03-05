@@ -12,8 +12,10 @@ export default async (_, res) => {
   const userStats = await unsplash.users.statistics('mtburdon');
   const { downloads, views } = await toJson(userStats);
 
-  return res.status(200).json({
-    downloads: downloads?.total || '0',
-    views: views?.total || '0'
-  });
+  return res.status(200).json({ downloads, views });
+
+  // return res.status(200).json({
+  //   downloads: downloads?.total || '0',
+  //   views: views?.total || '0'
+  // });
 };

@@ -25,8 +25,15 @@ const FooterNav = styled.div`
 
 const FooterLink = styled.a`
   color: var(--gray-500);
+  font-size: 14px;
   margin: 0 2px;
   padding: 4px 8px;
+  text-decoration: none;
+  
+  &:hover {
+    color: var(--gray-300);
+    text-decoration: none;
+  }
 `;
 
 const Footer = () => {

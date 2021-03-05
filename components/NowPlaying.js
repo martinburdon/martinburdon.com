@@ -36,6 +36,7 @@ const SongLabel = styled.p`
   color: var(--gray-100);
   font-size: 14px;
   line-height: 1.2;
+  margin: 0;
   max-width: 170px;
   overflow: hidden;
   text-decoration: none;
